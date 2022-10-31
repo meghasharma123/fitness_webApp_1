@@ -11,7 +11,7 @@ body {
   text-align: center;
 }
 
-.nav {
+.navigation {
   background-color: #333;
   color: white;
   display: flex;
@@ -21,25 +21,29 @@ body {
   padding: 0 1rem;
 }
 
-.site-title {
+.brand-name {
   font-size: 2rem;
 }
 
-.nav ul {
+.navigation ul {
   padding: 0;
   margin: 0;
   list-style: none;
   display: flex;
   gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.nav a {
+.navigation a {
   color: inherit;
   text-decoration: none;
   height: 100%;
   display: flex;
   align-items: center;
   padding: .25rem;
+}
+.navigation-menu {
+  margin-left: auto;
 }
 
 .nav li.active {
@@ -48,4 +52,64 @@ body {
 
 .nav li:hover {
   background-color: #777;
+}
+
+.hamburger {
+   /* removes default border on button element */
+  border: 0;
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: #283b8b;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  /* positions the icon to the right and center aligns it vertically */
+  position: absolute;
+  margin-top: 1.25rem;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+.hamburger:hover {
+  background-color: #2642af;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .navigation-menu ul {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    /*  stacks the li tags vertically  */
+    flex-direction: column;
+    /* makes menu span full height and width */
+    width: 100%;
+    height: calc(100vh - 77px);
+    background-color: white;
+    border-top: 1px solid black;
+  }
+  .navigation-menu li {
+    /* // centers link text and strips off margin */
+    text-align: center;
+    margin: 0;
+    margin-left: 2rem;
+
+  }
+  .navigation-menu li a {
+    color: black;
+    /* // increases the surface area of the anchor tag to span the full width of the menu */
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+  .navigation-menu li:hover {
+    background-color: #eee;
+  }
+  .navigation-menu.expanded ul {
+    display: block;
+  }
+
 }

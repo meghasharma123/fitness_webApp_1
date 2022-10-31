@@ -1,31 +1,30 @@
 import React from "react";
-import {Card,Box,CardContent,CardMedia,Typography, Button} from '@mui/material';
+import {Card,Box,CardContent,CardMedia,Typography, } from '@mui/material';
 import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import useStyle from './styles';
+import { Button, AddRoutine,TopCal, TopName, TopSide,Routine } from './styles';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
 const Routines = () => {
-  const classes = useStyle();
 
   return (
     <div>
-      <div className={classes.topname}>
-        <Typography variant="h3">My routines</Typography>
-        <div className={classes.topside}>
+      <TopName>
+        <Typography variant="h4">Routine</Typography>
+        <TopSide>
           <NotificationsIcon />
-          <div className={classes.topcal}>
+          <TopCal>
             <TripOriginIcon/>
             <Typography style={{color:'#fff'}}>245</Typography>
-          </div>
-        </div>
-      </div>
+          </TopCal>
+        </TopSide>
+        </TopName>
       <Typography style={{display:'flex',marginLeft:'2rem'}}>Ongoing</Typography>
-      <div className={classes.routine}>
-      <Card sx={{ display: 'flex',height:'10rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',maxWidth:'50rem' }}>
+      <Routine>
+      <Card sx={{ display: 'flex',height:'15rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',maxWidth:'fit-content',padding:'10px' }}>
           <CardMedia
                 component="img"
-                sx={{ width: 240 }}
+                sx={{ width: 110 }}
                 image="https://res.cloudinary.com/meghacloud/image/upload/v1667080929/about1/p09wr20h_lzjrj4.jpg"
                 alt="Live from space album cover"
               />
@@ -39,14 +38,14 @@ const Routines = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', pl: '24px', pb: 1 }}>
                   
                     Days Completed :  21/30
-                    <Button style={{border:'2px solid',marginLeft:'2rem'}}>Continue</Button>
               </Box>
+              <Button style={{border:'2px solid',marginLeft:'1rem'}}>Continue</Button>
             </Box>
       </Card>
-      <Card sx={{ display: 'flex',height:'10rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',maxWidth:'50rem' }}>
+      <Card sx={{ display: 'flex',height:'15rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',maxWidth:'fit-content',padding:'10px' }}>
           <CardMedia
                 component="img"
-                sx={{ width: 240 }}
+                sx={{ width: 110 }}
                 image="https://res.cloudinary.com/meghacloud/image/upload/v1666894812/about1/pic1_hxzula.avif"
                 alt="Live from space album cover"
               />
@@ -60,16 +59,14 @@ const Routines = () => {
               <Box sx={{ display: 'flex', alignItems: 'center', pl: '24px', pb: 1 }}>
                   
                     Days Completed :  11/30
-                    <Button style={{border:'2px solid',marginLeft:'2rem'}}>Continue</Button>
               </Box>
+              <Button style={{border:'2px solid',marginLeft:'1rem'}}>Continue</Button>
             </Box>
       </Card>
-      </div>
-      <div>
-        <Button style={{border:'2px solid',marginTop:'2rem',width:'40rem',height:'50px',marginLeft:'20rem'}}>
-          <AddBoxIcon/> Add a routine
-        </Button>
-      </div>
+      </Routine>
+      <AddRoutine>
+           Add a routine <AddBoxIcon/>
+      </AddRoutine>
     </div>
   )
 }

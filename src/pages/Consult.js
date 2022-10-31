@@ -1,27 +1,25 @@
 import React from "react";
-import {Card,Box,CardContent,CardMedia,Typography, Button} from '@mui/material';
+import {Card,Box,CardContent,CardMedia,Typography} from '@mui/material';
 import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import useStyle from './styles';
-import {CCardText} from '@coreui/react'
+import { SearchBox,Input,TopCal, TopName, TopSide, Trainer,Button } from "./styles";
 
 const Consult = () => {
-  const classes = useStyle();
   return (
     <div>
-      <div className={classes.topname}>
-        <Typography variant="h3">Consult</Typography>
-        <div className={classes.topside}>
+      <TopName>
+        <Typography variant="h4">Consult</Typography>
+        <TopSide>
           <NotificationsIcon />
-          <div className={classes.topcal}>
+          <TopCal>
             <TripOriginIcon/>
             <Typography style={{color:'#fff'}}>245</Typography>
-          </div>
-        </div>
-        </div>
-        <div className="searchBox">
-          <input type="text" placeholder="Search" name="search"  style={{ height: '45px', width: '70rem', marginLeft: '12rem',borderRadius:'12px' }} />
-        </div>
+          </TopCal>
+        </TopSide>
+        </TopName>
+        <SearchBox>
+          <Input type="text" placeholder="Article,Exercise,Diets" name="search"  style={{ height: '45px', width: '70rem', marginLeft: '12rem',borderRadius:'12px',padding:'15px' }} />
+        </SearchBox>
         <div style={{marginTop:'2rem'}}>
           <Button style={{border:'1px solid',backgroundColor:'#5F9DF7',color:'#fff'}}>
             Trainers
@@ -33,15 +31,14 @@ const Consult = () => {
             Therapists
           </Button>
         </div>
-        <div className={classes.trainer}>
-        <Card sx={{ display: 'flex',height:'15rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
+        <Trainer>
+        <Card sx={{ display: 'flex',height:'17rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
           <CardMedia
                 component="img"
-                sx={{ width: 240,height:150 }}
+                sx={{ width: 110,height:150 }}
                 image="https://res.cloudinary.com/meghacloud/image/upload/v1667074371/about1/640px-Mann_mit_ausgepr%C3%A4gten_Muskeln_am_Arm_l5sxls.jpg"
                 alt="Live from space album cover"
               />
-            <CCardText style={{display:'flex',flexDirection:'column-reverse'}}><h3><Button style={{border:'2px solid'}}>Book a session</Button></h3></CCardText>
             <Box sx={{ display: 'flex', flexDirection: 'column',height:'150px' }}>
                 <CardContent sx={{ flex: '1 0 auto' }}>
                   <Typography component="div" variant="h5">
@@ -52,16 +49,16 @@ const Consult = () => {
                   General Fitness Trainer<br/>
                     6 years of experience
               </Box>
+              <h3><Button style={{border:'2px solid'}}>Book a session</Button></h3>
             </Box>
         </Card>
-        <Card sx={{ display: 'flex',height:'15rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
+        <Card sx={{ display: 'flex',height:'17rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
           <CardMedia
                 component="img"
-                sx={{ width: 240,height:150 }}
+                sx={{ width: 110,height:150 }}
                 image="https://res.cloudinary.com/meghacloud/image/upload/v1666894811/about1/pic2_pzjbym.avif"
                 alt="Live from space album cover"
               />
-            <CCardText style={{display:'flex',flexDirection:'column-reverse'}}><h3><Button style={{border:'2px solid'}}>Book a session</Button></h3></CCardText>
             <Box sx={{ display: 'flex', flexDirection: 'column',height:'150px' }}>
                 <CardContent sx={{ flex: '1 0 auto' }}>
                   <Typography component="div" variant="h5">
@@ -72,9 +69,10 @@ const Consult = () => {
                   General Fitness Trainer<br/>
                     4 years of experience
               </Box>
+              <h3><Button style={{border:'2px solid'}}>Book a session</Button></h3>
             </Box>
         </Card>
-        </div>
+        </Trainer>
     </div>
   );
 }

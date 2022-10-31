@@ -2,31 +2,32 @@ import React from "react";
 import {Card,Box,CardContent,CardMedia,Typography, Button} from '@mui/material';
 import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import useStyle from './styles';
 import {CCard,CCardBody,CCardImage,CCardText} from '@coreui/react'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import { InviteCard,SearchBox,Input,TopCal, TopName, TopSide,FriendCard } from "./styles";
 
 const Spaces = () => {
-  const classes = useStyle();
 
     return (
       <div>
-        <div className={classes.topname}>
-        <Typography variant="h3">Spaces</Typography>
-        <div className={classes.topside}>
+        <TopName>
+        <Typography variant="h4">Spaces</Typography>
+        <TopSide>
           <NotificationsIcon />
-          <div className={classes.topcal}>
+          <TopCal>
             <TripOriginIcon/>
             <Typography style={{color:'#fff'}}>245</Typography>
-          </div>
-        </div>
-        </div>
-        <div className="searchBox">
-          <input type="text" placeholder="Search" name="search"  style={{ height: '45px', width: '70rem', marginLeft: '12rem',borderRadius:'12px' }} />
-        </div>
+          </TopCal>
+        </TopSide>
+        </TopName>
+        <SearchBox>
+          <Input type="text" placeholder="Article,Exercise,Diets" name="search"  style={{ height: '45px', width: '70rem', marginLeft: '12rem',borderRadius:'12px',padding:'15px' }} />
+        </SearchBox>
           <Typography style={{display:'flex',margin:'2rem'}}>Exercise with friends</Typography>
+
           {/* Cards for friends */}
-        <div style={{marginLeft:'10rem',display:'flex',justifyContent:'space-around'}}>
+
+        <FriendCard>
         <Card sx={{ display: 'flex',height:'10rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',maxWidth:'30rem' }}>
           <CardMedia
                 component="img"
@@ -37,7 +38,7 @@ const Spaces = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <CardContent sx={{ flex: '1 0 auto' }}>
                   <Typography component="div" variant="h5">
-                    Abhishek
+                    Abhshek
                   </Typography>
                 </CardContent>
               <Box sx={{ display: 'flex', alignItems: 'center', pl: '24px', pb: 1 }}>
@@ -63,8 +64,8 @@ const Spaces = () => {
               </Box>
             </Box>
         </Card>
-        </div>
-        <div style={{marginLeft:'10rem',display:'flex',justifyContent:'space-around'}}>
+        </FriendCard>
+        <FriendCard>
         <Card sx={{ display: 'flex',height:'10rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',maxWidth:'30rem' }}>
           <CardMedia
                 component="img"
@@ -75,7 +76,7 @@ const Spaces = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <CardContent sx={{ flex: '1 0 auto' }}>
                   <Typography component="div" variant="h5">
-                    Khusinid
+                    Khusind
                   </Typography>
                 </CardContent>
               <Box sx={{ display: 'flex', alignItems: 'center', pl: '24px', pb: 1 }}>
@@ -93,7 +94,7 @@ const Spaces = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                 <CardContent sx={{ flex: '1 0 auto' }}>
                   <Typography component="div" variant="h5">
-                    Salonidi
+                    Saloniid
                   </Typography>
                 </CardContent>
               <Box sx={{ display: 'flex', alignItems: 'center', pl: '24px', pb: 1 }}>
@@ -101,12 +102,14 @@ const Spaces = () => {
               </Box>
             </Box>
         </Card>
-        </div>
+        </FriendCard>
+
         {/* Cards for Events */}
-        <CCard style={{margin:'8rem',backgroundColor:'#B2B2B2',borderRadius:'12px',maxWidth:'50rem',marginLeft:'25rem'}}>
+        <InviteCard >
+        <CCard >
           <CCardBody>
             <CCardText>
-             <CCardImage src="https://res.cloudinary.com/meghacloud/image/upload/v1667076686/about1/Health-and-Fitness-Class-Guide_ciatt1.jpg" style={{height:'20rem',width:'50rem',border:'5px rgba(0, 0, 0, 0.26) solid',borderRadius:'12px'}}></CCardImage>
+             <CCardImage src="https://res.cloudinary.com/meghacloud/image/upload/v1667076686/about1/Health-and-Fitness-Class-Guide_ciatt1.jpg" style={{height:'-webkit-fill-available',width:'-webkit-fill-available',border:'5px rgba(0, 0, 0, 0.26) solid',borderRadius:'12px'}}></CCardImage>
             </CCardText>
             <CCardText>Yoga for beginners</CCardText>
             <CCardText>
@@ -117,6 +120,7 @@ const Spaces = () => {
             </CCardText>
           </CCardBody>
         </CCard>
+        </InviteCard>
       </div>
     );
   }

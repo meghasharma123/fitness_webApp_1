@@ -1,14 +1,15 @@
-import React,{useState} from "react";
+import React from "react";
 import {Card,Box,CardContent,CardMedia,Paper,Typography,Table,TableCell,TableContainer,TableHead,TableRow, Button} from '@mui/material';
 import TripOriginIcon from '@mui/icons-material/TripOrigin';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import useStyle from './styles';
 import moment from 'moment';
 import ReactApexChart from 'react-apexcharts'
 import {CCard,CCardBody,CCardText} from '@coreui/react'
+import { TopName,TopSide,TopCal,CalData, CardData, Calories } from './styles';
+
 
 const Home = () => {
-  const classes = useStyle();
+  
   const date = new Date();
   const weekDay = date.getDay();
   const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
@@ -66,17 +67,17 @@ const Home = () => {
   
       return (
       <div>
-      <div className={classes.topname}>
-        <Typography variant="h2">Hi,Pranav</Typography>
-        <div className={classes.topside}>
+      <TopName>
+        <Typography variant="h4">Hi,Pranav</Typography>
+        <TopSide>
           <NotificationsIcon />
-          <div className={classes.topcal}>
+          <TopCal>
             <TripOriginIcon/>
             <Typography style={{color:'#fff'}}>245</Typography>
-          </div>
-        </div>
-        </div>
-        <div className="table">
+          </TopCal>
+        </TopSide>
+        </TopName>
+        <CalData>
           <TableContainer component={Paper} style={{backgroundColor:'#3C4048'}}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -92,15 +93,15 @@ const Home = () => {
         </TableHead>
       </Table>
           </TableContainer>
-        </div>
-        <div className={classes.card}>
+        </CalData>
+        <CardData>
         <Typography variant="h5">Today</Typography>
-        <Button><Typography variant="contained">View All</Typography></Button>
-        </div>
+        <Button style={{position:'inherit'}}><Typography variant="contained" style={{position:'absolute',display:'contents'}}>View All</Typography></Button>
+        </CardData>
         <Card sx={{ display: 'flex',height:'10rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
           <CardMedia
                 component="img"
-                sx={{ width: 240 }}
+                sx={{ width: 137 }}
                 image="https://res.cloudinary.com/meghacloud/image/upload/v1666894811/about1/pic2_pzjbym.avif"
                 alt="Live from space album cover"
               />
@@ -118,7 +119,7 @@ const Home = () => {
         <Card sx={{ display: 'flex',height:'10rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
           <CardMedia
                 component="img"
-                sx={{ width: 240 }}
+                sx={{ width: 137 }}
                 image="https://res.cloudinary.com/meghacloud/image/upload/v1666894812/about1/pic1_hxzula.avif"
                 alt="Live from space album cover"
               />
@@ -136,7 +137,7 @@ const Home = () => {
         <Card sx={{ display: 'flex',height:'10rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
           <CardMedia
                 component="img"
-                sx={{ width: 240 }}
+                sx={{ width: 137 }}
                 image="https://res.cloudinary.com/meghacloud/image/upload/v1667066362/images_wdn4iu.jpg"
                 alt="Live from space album cover"
               />
@@ -151,8 +152,8 @@ const Home = () => {
               </Box>
             </Box>
         </Card>
-        <div className={classes.calories}>
-        <CCard style={{ width: '18rem',backgroundColor:'#c7c2c2',borderRadius:'5%' }}>
+        <Calories>
+        <CCard style={{ width: '18rem',backgroundColor:'#c7c2c2',borderRadius:'5%',marginBottom:'1rem' }}>
           <CCardBody>
             <CCardText>
             <ReactApexChart 
@@ -164,7 +165,7 @@ const Home = () => {
             <CCardText>Glasses of water</CCardText>
           </CCardBody>
         </CCard>
-        <CCard style={{ width: '18rem',backgroundColor:'#c7c2c2',borderRadius:'5%' }}>
+        <CCard style={{ width: '18rem',backgroundColor:'#c7c2c2',borderRadius:'5%',marginBottom:'1rem' }}>
           <CCardBody>
             <CCardText>
             <ReactApexChart 
@@ -176,7 +177,7 @@ const Home = () => {
             <CCardText>Calories Burned</CCardText>
           </CCardBody>
         </CCard>
-        <CCard style={{ width: '18rem',backgroundColor:'#c7c2c2',borderRadius:'5%' }}>
+        <CCard style={{ width: '18rem',backgroundColor:'#c7c2c2',borderRadius:'5%',marginBottom:'1rem' }}>
           <CCardBody>
             <CCardText>
             <ReactApexChart 
@@ -188,7 +189,7 @@ const Home = () => {
             <CCardText>Steps</CCardText>
           </CCardBody>
         </CCard>
-        </div>
+        </Calories>
       </div>
     );
   }
