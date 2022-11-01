@@ -31,14 +31,12 @@ export const CalData = styled.div`
     background-color: #3C4048,
 `
 export const SearchBox = styled.div`
-    @media (max-width: 768px) {
-        max-width:120px;
-    }
+    max-width:100%;
+    align-items:center;
 `
 export const Input= styled.input`
-    @media (max-width: 950px) {
-        max-width:200px;
-        margin-left:3rem !important;
+    @media (max-width: 1000px) {
+        max-width:18rem;
     }
 `
 
@@ -55,6 +53,7 @@ export const Calories = styled.div`
     display:flex;
     justify-content: space-evenly;
     margin-top:2rem;
+    align-items:center;
     @media (max-width: 950px) {
         flex-direction: column;
         margin:1rem;
@@ -64,9 +63,7 @@ export const Trainer = styled.div`
     display:flex;
     justify-content:center;
     flex-direction:row;
-    max-width:40rem;
-    margin-left:20rem;
-    justify-content:space-between;
+    width:100%;
     @media (max-width: 950px) {
         flex-direction: column;
         margin:1rem;
@@ -77,16 +74,16 @@ export const Routine = styled.div`
     display:flex;
     flex-direction:row;
     justify-content:space-around;
-    @media (max-width: 950px) {
+    @media (max-width: 850px) {
         flex-direction: column;
         margin:1rem;
     }
 `
 export const FriendCard = styled.div`
-    margin-left:10rem;
+    ${'' /* margin-left:10rem; */}
     display:flex;
     justify-content:space-around;
-    @media (max-width:950px){
+    @media (max-width:800px){
         flex-direction: column;
         align-items: flex-start;
         margin-left:1rem !important;

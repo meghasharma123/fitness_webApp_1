@@ -18,7 +18,7 @@ const Consult = () => {
         </TopSide>
         </TopName>
         <SearchBox>
-          <Input type="text" placeholder="Article,Exercise,Diets" name="search"  style={{ height: '45px', width: '70rem', marginLeft: '12rem',borderRadius:'12px',padding:'15px' }} />
+          <Input type="text" placeholder="Article,Exercise,Diets" name="search"  style={{ height: '45px',width:'25rem', borderRadius:'12px',padding:'15px',alignItems:'center' }} />
         </SearchBox>
         <div style={{marginTop:'2rem'}}>
           <Button style={{border:'1px solid',backgroundColor:'#5F9DF7',color:'#fff'}}>
@@ -32,7 +32,7 @@ const Consult = () => {
           </Button>
         </div>
         <Trainer>
-        <Card sx={{ display: 'flex',height:'17rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
+        <Card sx={{ display: 'flex',height:'17rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',marginRight:'2rem' }}>
           <CardMedia
                 component="img"
                 sx={{ width: 110,height:150 }}
@@ -52,7 +52,7 @@ const Consult = () => {
               <h3><Button style={{border:'2px solid'}}>Book a session</Button></h3>
             </Box>
         </Card>
-        <Card sx={{ display: 'flex',height:'17rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem' }}>
+        <Card sx={{ display: 'flex',height:'17rem',backgroundColor:'#c7c2c2',borderRadius:'12px',marginTop:'2rem',marginRight:'2rem' }}>
           <CardMedia
                 component="img"
                 sx={{ width: 110,height:150 }}

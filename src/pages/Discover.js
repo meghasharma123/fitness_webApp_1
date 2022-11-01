@@ -21,7 +21,7 @@ const Discover = () => {
         </TopSide>
         </TopName>
         <SearchBox>
-          <Input type="text" placeholder="Article,Exercise,Diets" name="search"  style={{ height: '45px', width: '70rem', marginLeft: '12rem',borderRadius:'12px',padding:'15px' }} />
+          <Input type="text" placeholder="Article,Exercise,Diets" name="search"  style={{ height: '45px',width:'25rem', borderRadius:'12px',padding:'15px',alignItems:'center' }} />
         </SearchBox>
         <Calories>
         <Stack direction="row" spacing={1}>
